@@ -1,0 +1,59 @@
+Smart Waste Management using AI for Image Sorting - Case Study
+====================================================
+
+Overview:
+---------
+This project is an end-to-end AI-powered waste classification system. It uses a Convolutional Neural Network (CNN) to classify images of waste into six categories: cardboard, glass, metal, paper, plastic, and trash. The system includes a Python backend (Flask API), a trained model, and a modern web frontend for user interaction.
+
+Key Features:
+-------------
+1. **Image Classification**: Classifies waste images into 6 categories using a deep learning model.
+2. **Recyclability Info**: Provides detailed information about whether the item is recyclable and how to dispose of it.
+3. **User-Friendly Frontend**: Modern, responsive web UI for uploading images and viewing results.
+4. **REST API**: Flask backend exposes a `/predict` endpoint for image classification.
+5. **Data Augmentation**: Improves model robustness using Keras ImageDataGenerator.
+6. **Error Handling**: Robust error messages for invalid files, server errors, and prediction issues.
+7. **Step-by-Step Usage Guide**: Included in `USAGE.md` for easy setup and operation.
+
+Project Files:
+--------------
+- `waste_classifier/data_utils.py`: Loads and preprocesses image data, supports augmentation.
+- `waste_classifier/model.py`: Defines the CNN architecture for classification.
+- `waste_classifier/train.py`: Trains and evaluates the model, saves to `waste_cnn_model.h5`.
+- `waste_classifier/predict.py`: Loads the model and predicts the category for a given image.
+- `waste_classifier/app.py`: Flask backend serving the API and frontend.
+- `waste_classifier/frontend.html`: Modern web UI for uploading images and displaying results.
+- `data/Garbage classification/`: Folder containing subfolders for each waste category with images.
+- `uploads/`: Temporary folder for uploaded images via the API.
+- `USAGE.md`: Step-by-step instructions for setup, training, and usage.
+- `requirements.txt`: Lists all required Python packages.
+
+Requirements:
+-------------
+- Python 3.8+
+- TensorFlow (Keras)
+- Flask
+- scikit-learn
+- numpy
+- pillow
+
+How It Works:
+-------------
+1. **Data Preparation**: Images are organized in folders by category. `data_utils.py` loads and augments them.
+2. **Model Training**: `train.py` uses the CNN defined in `model.py` to train on the dataset, saving the best model.
+3. **Prediction**: `predict.py` loads the trained model and predicts the category for new images.
+4. **API**: `app.py` exposes a `/predict` endpoint for image uploads and returns predictions as JSON.
+5. **Frontend**: `frontend.html` allows users to upload images and view predictions and recyclability info.
+
+Example Use Case:
+-----------------
+A user uploads a photo of a plastic bottle via the web UI. The backend predicts "plastic" with high confidence and displays: "Recyclable: Yes ♻️. Most plastic bottles and containers are recyclable. Check local guidelines."
+
+Benefits:
+---------
+- Reduces human error in waste sorting.
+- Educates users on proper recycling.
+- Can be integrated into smart bins or municipal waste systems.
+
+---
+For more details, see the code files and `USAGE.md` in the project.

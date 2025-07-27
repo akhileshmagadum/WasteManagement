@@ -1,0 +1,23 @@
+# Ignore common folders
+node_modules/
+__pycache__/
+env/
+venv/
+.idea/
+.DS_Store
+.venv
+
+# Ignore data
+data/
+datasets/
+*.csv
+*.json
+*.zip
+
+# Ignore logs or compiled code
+*.log
+*.pyc
+
+# Ignore secret config
+.env
+*.env
